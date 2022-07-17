@@ -28,6 +28,9 @@ module databricks './modules/databricks.bicep' = {
     deployment_id: deployment_id
     contributor_principal_id: datafactory.outputs.datafactory_principal_id
   }
+  dependsOn: [
+    datafactory
+  ]
 }
 
 module storage './modules/storage.bicep' = {
@@ -39,6 +42,9 @@ module storage './modules/storage.bicep' = {
     deployment_id: deployment_id
     contributor_principal_id: datafactory.outputs.datafactory_principal_id
   }
+  dependsOn: [
+    datafactory
+  ]
 }
 
 module synapse_sql_pool './modules/synapse_sql_pool.bicep' = {

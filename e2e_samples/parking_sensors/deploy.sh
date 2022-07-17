@@ -54,7 +54,7 @@ GITHUB_REPO_URL=$github_repo_url \
     bash -c "./scripts/deploy_azdo_service_connections_github.sh"
 
 # Replace 'devlace/mdw-dataops-clone' to deployer's github project
-sed -i "s+devlace/mdw-dataops-clone+$GITHUB_REPO+" devops/azure-pipelines-cd-release.yml
+sed -i "s+msha1026/modern-data-warehouse-dataops+$GITHUB_REPO+" devops/azure-pipelines-cd-release.yml
 
 # azure-pipelines-cd-release.yml pipeline require DEV_DATAFACTORY_NAME set, retrieve this value from .env.dev file
 declare DEV_"$(grep -e '^DATAFACTORY_NAME' .env.dev | tail -1 | xargs)"
