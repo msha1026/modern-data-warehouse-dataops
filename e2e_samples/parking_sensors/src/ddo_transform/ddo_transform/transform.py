@@ -11,6 +11,7 @@ from pyspark.sql.types import (
 
 uuidUdf = udf(lambda: str(uuid.uuid4()), StringType())
 EMPTY_UUID = '00000000-0000-0000-0000-000000000000'
+random = 'random'
 
 
 def get_schema(schema_name):
