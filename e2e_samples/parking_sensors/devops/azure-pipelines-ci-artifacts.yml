@@ -101,7 +101,7 @@ stages:
       - task: Npm@1
         inputs:
           command: 'custom'
-          workingDir: '$(Build.Repository.LocalPath)/adf
+          workingDir: '$(Build.Repository.LocalPath)/adf'
           customCommand: 'run build export $(Build.Repository.LocalPath)/adf /subscriptions/94ac5672-861c-480f-ad39-915b74f50821/resourceGroups/mdwdops-uhfyg-dev-rg/providers/Microsoft.DataFactory/factories/mdwdops-adf-dev-uhfyg "ArmTemplate"'
         displayName: 'Validate and Generate ARM template'
 
