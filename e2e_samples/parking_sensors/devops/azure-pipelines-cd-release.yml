@@ -9,12 +9,12 @@ resources:
     trigger: 
       branches:
       - main
-  repositories:
-  - repository: mdwdataops_adfpublish
-    type: github
-    endpoint: mdwdops-github
-    name: msha1026/modern-data-warehouse-dataops
-    ref: adf_publish
+  # repositories:
+  # - repository: mdwdataops_adfpublish
+  #   type: github
+  #   endpoint: mdwdops-github
+  #   name: msha1026/modern-data-warehouse-dataops
+  #   ref: adf_publish
 
 # The deployment script sets this as a Pipeline Variable, but you may choose to set it here in the definition
 #
@@ -32,6 +32,10 @@ stages:
     parameters:
       environmentName: 'DEV'
   - template: templates/jobs/deploy-azuresqldb-job.yml
+    parameters:
+      environmentName: 'DEV'
+      serviceConnection: 'mdwdops-serviceconnection-dev'
+  - template: templates/jobs/deploy-adf-job.yml
     parameters:
       environmentName: 'DEV'
       serviceConnection: 'mdwdops-serviceconnection-dev'
