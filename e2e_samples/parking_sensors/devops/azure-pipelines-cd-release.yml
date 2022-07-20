@@ -9,12 +9,12 @@ resources:
     trigger: 
       branches:
       - main
-  # repositories:
-  # - repository: mdwdataops_adfpublish
-  #   type: github
-  #   endpoint: mdwdops-github
-  #   name: msha1026/modern-data-warehouse-dataops
-  #   ref: adf_publish
+  repositories:
+  - repository: mdwdataops
+    type: github
+    endpoint: mdwdops-github
+    name: msha1026/modern-data-warehouse-dataops
+    ref: main
 
 # The deployment script sets this as a Pipeline Variable, but you may choose to set it here in the definition
 #
