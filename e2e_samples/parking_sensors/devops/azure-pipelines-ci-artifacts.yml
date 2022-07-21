@@ -81,7 +81,7 @@ stages:
       - task: Npm@1
         inputs:
           command: 'install'
-          workingDir: '$(Build.Repository.LocalPath)/$(basePath)/adf'
+          workingDir: '$(Build.Repository.LocalPath)/$(basePath)/adf/'
           verbose: true
         displayName: 'Install npm package'
 
@@ -91,8 +91,8 @@ stages:
       - task: Npm@1
         inputs:
           command: 'custom'
-          workingDir: '$(Build.Repository.LocalPath)/$(basePath)/adf' #replace with the package.json folder
-          customCommand: 'run build validate $(Build.Repository.LocalPath) /subscriptions/94ac5672-861c-480f-ad39-915b74f50821/resourceGroups/mdwdops-uhfyg-dev-rg/providers/Microsoft.DataFactory/factories/mdwdops-adf-dev-uhfyg'
+          workingDir: '$(Build.Repository.LocalPath)/$(basePath)/adf/' #replace with the package.json folder
+          customCommand: 'run build validate $(Build.Repository.LocalPath)/$(basePath)/adf/ /subscriptions/94ac5672-861c-480f-ad39-915b74f50821/resourceGroups/mdwdops-uhfyg-dev-rg/providers/Microsoft.DataFactory/factories/mdwdops-adf-dev-uhfyg'
         displayName: 'Validate'
 
       # Validate and then generate the ARM template into the destination folder, which is the same as selecting "Publish" from the UX.
@@ -101,8 +101,8 @@ stages:
       - task: Npm@1
         inputs:
           command: 'custom'
-          workingDir: '$(Build.Repository.LocalPath)/$(basePath)/adf'
-          customCommand: 'run build export $(Build.Repository.LocalPath) /subscriptions/94ac5672-861c-480f-ad39-915b74f50821/resourceGroups/mdwdops-uhfyg-dev-rg/providers/Microsoft.DataFactory/factories/mdwdops-adf-dev-uhfyg "ArmTemplate"'
+          workingDir: '$(Build.Repository.LocalPath)/$(basePath)/adf/'
+          customCommand: 'run build export $(Build.Repository.LocalPath)/$(basePath)/adf/ /subscriptions/94ac5672-861c-480f-ad39-915b74f50821/resourceGroups/mdwdops-uhfyg-dev-rg/providers/Microsoft.DataFactory/factories/mdwdops-adf-dev-uhfyg "ArmTemplate"'
         displayName: 'Validate and Generate ARM template'
 
       # Publish the artifact to be used as a source for a release pipeline.
