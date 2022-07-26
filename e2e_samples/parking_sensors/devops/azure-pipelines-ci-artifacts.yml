@@ -70,6 +70,9 @@ stages:
     
   - job: 'publish_adf_templates'
     displayName: 'Publish ADF Templates'
+    variables:
+    - group: mdwdops-release-dev
+    - group: mdwdops-secrets-dev
     pool:
       vmImage: 'ubuntu-latest'
     steps:
