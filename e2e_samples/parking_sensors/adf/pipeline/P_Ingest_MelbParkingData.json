@@ -72,6 +72,7 @@
 			},
 			{
 				"name": "DownloadSensorData",
+				"description": "This downloads sensor data.",
 				"type": "Copy",
 				"dependsOn": [
 					{
