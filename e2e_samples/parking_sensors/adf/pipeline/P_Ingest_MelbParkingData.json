@@ -127,6 +127,7 @@
 			},
 			{
 				"name": "DownloadBayData",
+				"description": "HI",
 				"type": "Copy",
 				"dependsOn": [
 					{
